@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-night-950 text-night-100 antialiased;
+  }
+  body {
+    @apply min-h-screen font-sans;
+    background-image:
+      radial-gradient(900px 500px at 85% -10%, rgba(47, 123, 255, 0.10), transparent 60%),
+      radial-gradient(700px 420px at -10% 0%, rgba(139, 92, 246, 0.08), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-electric-500/40 text-night-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-night-700/70 bg-night-850/85 shadow-lg shadow-black/25;
+  }
+  .field {
+    @apply w-full rounded-lg border border-night-600 bg-night-900 px-3 py-2 text-sm text-night-100 placeholder:text-night-400 transition focus:border-electric-400 focus:outline-none focus:ring-2 focus:ring-electric-500/30 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-electric-500 text-white shadow-md shadow-electric-600/30 hover:-translate-y-px hover:bg-electric-400;
+  }
+  .btn-secondary {
+    @apply btn border border-night-600 bg-night-800 text-night-100 hover:border-night-500 hover:bg-night-700;
+  }
+  .btn-ghost {
+    @apply btn text-night-300 hover:bg-night-800 hover:text-night-100;
+  }
+  .btn-danger {
+    @apply btn border border-red-500/40 bg-red-500/10 text-red-300 hover:bg-red-500/20;
+  }
+  .table-head {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-night-300;
+  }
+  .table-cell {
+    @apply px-4 py-3 text-sm text-night-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
